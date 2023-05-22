@@ -25,8 +25,11 @@ towards more specific functionalities. Here's a potential order:
       power to add/remove users, change settings, etc. CRUD over ranks, CRUD
       over resources, actions manage landing page
 
+## aesthetics moment
 name generator http://www.fantasynamegenerators.com/cult-names.php
 - [ ] deal with imeages - for user, gor group
+- [ ] get own logo
+- [ ] change the tailwind styles to be fittig the purpose
 
 - [ ] Group Membership Zero Knowledge Verification Handshake and QR Code: This
       is essential for security and user identity verification. It seems to be a

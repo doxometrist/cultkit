@@ -91,6 +91,10 @@ export default function Layout(props: LayoutProps) {
       href: "/pricing",
       inner: "Pricing",
     },
+    {
+      href: "/cult",
+      inner: "Browse cults",
+    },
     props.session
       ? {
         href: "/account",

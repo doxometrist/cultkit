@@ -20,15 +20,16 @@ import * as $13 from "./routes/blog/index.tsx";
 import * as $14 from "./routes/callback.ts";
 import * as $15 from "./routes/chronicle/[id].tsx";
 import * as $16 from "./routes/cult/[id].tsx";
-import * as $17 from "./routes/cult/products/[id].tsx";
-import * as $18 from "./routes/feed.ts";
-import * as $19 from "./routes/index.tsx";
-import * as $20 from "./routes/item/[id].tsx";
-import * as $21 from "./routes/login.ts";
-import * as $22 from "./routes/logout.ts";
-import * as $23 from "./routes/meeting/index.tsx";
-import * as $24 from "./routes/pricing.tsx";
-import * as $25 from "./routes/submit.tsx";
+import * as $17 from "./routes/cult/index.tsx";
+import * as $18 from "./routes/cult/products/[id].tsx";
+import * as $19 from "./routes/feed.ts";
+import * as $20 from "./routes/index.tsx";
+import * as $21 from "./routes/item/[id].tsx";
+import * as $22 from "./routes/login.ts";
+import * as $23 from "./routes/logout.ts";
+import * as $24 from "./routes/meeting/index.tsx";
+import * as $25 from "./routes/pricing.tsx";
+import * as $26 from "./routes/submit.tsx";
 import * as $$0 from "./islands/VoteButton.tsx";
 
 const manifest = {
@@ -50,15 +51,16 @@ const manifest = {
     "./routes/callback.ts": $14,
     "./routes/chronicle/[id].tsx": $15,
     "./routes/cult/[id].tsx": $16,
-    "./routes/cult/products/[id].tsx": $17,
-    "./routes/feed.ts": $18,
-    "./routes/index.tsx": $19,
-    "./routes/item/[id].tsx": $20,
-    "./routes/login.ts": $21,
-    "./routes/logout.ts": $22,
-    "./routes/meeting/index.tsx": $23,
-    "./routes/pricing.tsx": $24,
-    "./routes/submit.tsx": $25,
+    "./routes/cult/index.tsx": $17,
+    "./routes/cult/products/[id].tsx": $18,
+    "./routes/feed.ts": $19,
+    "./routes/index.tsx": $20,
+    "./routes/item/[id].tsx": $21,
+    "./routes/login.ts": $22,
+    "./routes/logout.ts": $23,
+    "./routes/meeting/index.tsx": $24,
+    "./routes/pricing.tsx": $25,
+    "./routes/submit.tsx": $26,
   },
   islands: {
     "./islands/VoteButton.tsx": $$0,

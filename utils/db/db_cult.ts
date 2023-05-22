@@ -12,6 +12,13 @@ interface InitCult {
   creatorId: string;
 }
 
+export async function getAllCults(options?: Deno.KvListOptions) {
+  const iter = await kv.list<Cult>({ prefix: ["cults"] }, options);
+  const items = [];
+  for await (const res of iter) items.push(res.value);
+  return items;
+}
+
 export async function createCult(initCult: InitCult) {
   let res = { ok: false };
   while (!res.ok) {

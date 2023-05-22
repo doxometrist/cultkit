@@ -45,7 +45,7 @@ export default function BlogPage(props: PageProps<BlogPageData>) {
     <>
       <Head
         title="Blog"
-        description="This is the blog for Deno SaaSKit"
+        description="This is the blog for Cultkit"
         href={props.url.href}
       />
       <Layout session={props.data.sessionId}>
