@@ -56,6 +56,7 @@ export async function getItemByUser(userId: string, itemId: string) {
   return res.value;
 }
 
+// COMMENT STUFF
 interface InitComment {
   userId: string;
   itemId: string;
@@ -98,6 +99,7 @@ export async function getCommentsByItem(
   return comments;
 }
 
+// VOTE STUFF
 interface InitVote {
   userId: string;
   itemId: string;
@@ -189,6 +191,7 @@ export async function getVotedItemIdsByUser(
   return voteItemIds;
 }
 
+// USER STUFF
 interface InitUser {
   id: string;
   login: string;
