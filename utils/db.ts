@@ -1,5 +1,6 @@
 // Copyright 2023 the Deno authors. All rights reserved. MIT license.
-import { AssertionError } from "https://deno.land/std@0.186.0/testing/asserts.ts";
+import { AssertionError } from "std/testing/asserts.ts";
+import { Persona } from "@/utils/db/db_persona.ts";
 
 export const kv = await Deno.openKv();
 
@@ -202,6 +203,8 @@ interface InitUser {
 
 export interface User extends InitUser {
   isSubscribed: boolean;
+  personas: Persona[]
+  joinDate: Date;
 }
 
 export async function createUser(user: InitUser) {
@@ -212,8 +215,9 @@ export async function createUser(user: InitUser) {
     "users_by_stripe_customer",
     user.stripeCustomerId,
   ];
+  const date = new Date();
 
-  user = { ...user, isSubscribed: false } as User;
+  user = { ...user, isSubscribed: false, joinDate: date, personas: [] } as User;
 
   const res = await kv.atomic()
     .check({ key: usersKey, versionstamp: null })

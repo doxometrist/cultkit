@@ -1,4 +1,10 @@
 
+# database prep
+- [x] clarity user - persona link. does it work between cults? probably it should
+- [x] think of the structure for nesting and double keys
+- [x] figure out which need IDs
+- [x] make default ranks
+
 # steps
 it's usually best to start with the foundational elements, then build upwards
 towards more specific functionalities. Here's a potential order:
@@ -9,7 +15,8 @@ towards more specific functionalities. Here's a potential order:
       -[ ] landing page for a cult with number of
       followers
 
-- [ ] user different identities feature
+- [ ] user different identities feature - more after paying me $
+// could be many, infinite own profiles. no identity confirmation
 
 - [ ] Groups Functionalities: Set up the basic group functionality. This
       includes creating a group, joining a group, leaving a group, etc.
@@ -19,6 +26,7 @@ towards more specific functionalities. Here's a potential order:
       over resources, actions manage landing page
 
 name generator http://www.fantasynamegenerators.com/cult-names.php
+- [ ] deal with imeages - for user, gor group
 
 - [ ] Group Membership Zero Knowledge Verification Handshake and QR Code: This
       is essential for security and user identity verification. It seems to be a
@@ -29,6 +37,7 @@ name generator http://www.fantasynamegenerators.com/cult-names.php
 
 - [ ] Writing Space Inside Groups: Similar to sharing resources, this is a
       primary feature of the group interaction, allowing for discussion and
+      - [ ] quill writing space - there you define areas that each person can see
       collaboration.
 
 - [ ] Group History Page: This will let users view the past activity within the
@@ -43,7 +52,7 @@ name generator http://www.fantasynamegenerators.com/cult-names.php
       previously established functionality (e.g., resource sharing, writing
       space), it's better to develop this later.
 
-- [ ] quill writing space - there you define areas that each person can see
+- [ ] create db update functions for all the files
 
 # here mvp and deployment
 
@@ -92,6 +101,16 @@ and participate in them!
 - recommendation for rank promotion?
 - could allow anyone to use GPT to talk with?
 
+## more activities
+- meditation
+- discussion fora
+- chanting / signing
+- shared memeory palace
+- group studies, digital copies of texts
+- own emojis
+- rituals
+- fasting support groups
+
 # votes reference
 
 dashboard https://quadraticvote.co/event?id=32ada6c6-2e58-4990-a42a-d0428d9d241a
@@ -106,4 +125,9 @@ Original recommendation
 - sell physical merch integration - 4, 6
 - quizzes and mantras - need to repeat in voice for a recording to review - 4, 6
 
+
 - pdf creation https://pdf-lib.js.org/
+
+
+core, frequent fliers, and passive participants
+https://twitter.com/forthrighter/status/1652995887331778563
