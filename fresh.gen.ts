@@ -28,9 +28,12 @@ import * as $21 from "./routes/item/[id].tsx";
 import * as $22 from "./routes/login.ts";
 import * as $23 from "./routes/logout.ts";
 import * as $24 from "./routes/meeting/index.tsx";
-import * as $25 from "./routes/pricing.tsx";
-import * as $26 from "./routes/submit.tsx";
-import * as $$0 from "./islands/VoteButton.tsx";
+import * as $25 from "./routes/personas/_middleware.ts";
+import * as $26 from "./routes/personas/index.tsx";
+import * as $27 from "./routes/pricing.tsx";
+import * as $28 from "./routes/submit.tsx";
+import * as $$0 from "./islands/OpenFormButton.tsx";
+import * as $$1 from "./islands/VoteButton.tsx";
 
 const manifest = {
   routes: {
@@ -59,11 +62,14 @@ const manifest = {
     "./routes/login.ts": $22,
     "./routes/logout.ts": $23,
     "./routes/meeting/index.tsx": $24,
-    "./routes/pricing.tsx": $25,
-    "./routes/submit.tsx": $26,
+    "./routes/personas/_middleware.ts": $25,
+    "./routes/personas/index.tsx": $26,
+    "./routes/pricing.tsx": $27,
+    "./routes/submit.tsx": $28,
   },
   islands: {
-    "./islands/VoteButton.tsx": $$0,
+    "./islands/OpenFormButton.tsx": $$0,
+    "./islands/VoteButton.tsx": $$1,
   },
   baseUrl: import.meta.url,
   config,

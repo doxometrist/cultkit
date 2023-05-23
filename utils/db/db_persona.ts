@@ -5,9 +5,10 @@ export interface Persona extends InitPersona {
   savedResources: Resource[];
   joinDate: Date;
   id: string;
+  name: string;
 }
 
-interface InitPersona {
+export interface InitPersona {
   name: string;
   description: string;
 }
@@ -19,9 +20,9 @@ export async function createPersona(initPersona: InitPersona, userId: string) {
     const personaByUserKey = ["users", userId, 'personas_by_user', id];
     const persona: Persona = {
       ...initPersona,
-      id:id,
+      id: id,
       savedResources: [],
-      joinDate:new Date()
+      joinDate: new Date()
     };
 
     res = await kv.atomic()
@@ -33,7 +34,7 @@ export async function createPersona(initPersona: InitPersona, userId: string) {
   }
 }
 
-export async function getAllPersonas(userId:string, options?: Deno.KvListOptions) {
+export async function getPersonasByUserId(userId: string, options?: Deno.KvListOptions) {
   const iter = await kv.list<Persona>({ prefix: ["users", userId, 'personas_by_user'] }, options);
   const items = [];
   for await (const res of iter) items.push(res.value);

@@ -87,13 +87,14 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   const headerNavItems = [
-    // {
-    //   href: "/pricing",
-    //   inner: "Pricing",
-    // },
     {
       href: "/cult",
       inner: "Browse cults",
+    },
+    {
+
+      href: "/personas",
+      inner: "My personas",
     },
     props.session
       ? {

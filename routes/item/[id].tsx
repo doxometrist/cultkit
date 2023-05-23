@@ -121,9 +121,9 @@ export default function ItemPage(props: PageProps<ItemPageData>) {
               <div class="py-4">
                 <p>
                   {props.data.commentsUsers[index].login}{" "}
-                  {props.data.commentsUsers[index].isSubscribed && (
+                  {/* {props.data.commentsUsers[index].isSubscribed && (
                     <span title="Deno Hunt premium user">🦕{" "}</span>
-                  )}
+                  )} */}
                 </p>
                 <p class="text-gray-500">
                   {timeAgo(new Date(comment.createdAt))} ago

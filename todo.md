@@ -15,7 +15,7 @@ towards more specific functionalities. Here's a potential order:
       - [ ] landing page for a cult with number of
       followers
 
-- [ ] user different identities feature - more after paying me $
+- [x] user different identities feature - more after paying me $
 // could be many, infinite own profiles. no identity confirmation
 
 - [ ] Groups Functionalities: Set up the basic group functionality. This

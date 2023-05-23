@@ -1,5 +1,5 @@
 // Copyright 2023 the Deno authors. All rights reserved. MIT license.
-export const SITE_NAME = "Deno Hunt (Beta)";
+export const SITE_NAME = "Cultspace kit";
 export const SITE_DESCRIPTION = "Discover new Deno projects. Share your own.";
 export const REDIRECT_PATH_AFTER_LOGIN = "/";
 
@@ -15,3 +15,6 @@ export const INPUT_STYLES =
 export const NOTICE_STYLES =
   "px-4 py-2 rounded-lg bg-yellow-100 text-yellow-700";
 export const SITE_WIDTH_STYLES = "mx-auto max-w-7xl w-full";
+
+export const PREMIUM_LIMIT = 10;
+export const DEFAULT_LIMIT = 5;
