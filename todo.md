@@ -9,10 +9,10 @@
 it's usually best to start with the foundational elements, then build upwards
 towards more specific functionalities. Here's a potential order:
 
-- [ ] Landing Page: This is your user's first point of contact with your
+- [x] Landing Page: This is your user's first point of contact with your
       product. It doesn't need to be fully fleshed out initially, but you'll
       want a placeholder at least. 
-      -[ ] landing page for a cult with number of
+      - [ ] landing page for a cult with number of
       followers
 
 - [ ] user different identities feature - more after paying me $

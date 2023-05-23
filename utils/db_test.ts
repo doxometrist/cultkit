@@ -17,7 +17,7 @@ Deno.test("[db] user", async () => {
     id: crypto.randomUUID(),
     login: crypto.randomUUID(),
     avatarUrl: "https://example.com",
-    stripeCustomerId: crypto.randomUUID(),
+    // stripeCustomerId: crypto.randomUUID(),
     sessionId: crypto.randomUUID(),
   };
 
@@ -26,14 +26,14 @@ Deno.test("[db] user", async () => {
   assertEquals(await getUserById(user.id), user);
   assertEquals(await getUserByLogin(user.login), user);
   assertEquals(await getUserBySessionId(user.sessionId), user);
-  assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
+  // assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
 
   await setUserSubscription(user, true);
   user = { ...user, isSubscribed: true };
   assertEquals(await getUserById(user.id), user);
   assertEquals(await getUserByLogin(user.login), user);
   assertEquals(await getUserBySessionId(user.sessionId), user);
-  assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
+  // assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
 
   const sessionId = crypto.randomUUID();
   await setUserSession(user, sessionId);
@@ -41,11 +41,11 @@ Deno.test("[db] user", async () => {
   assertEquals(await getUserById(user.id), user);
   assertEquals(await getUserByLogin(user.login), user);
   assertEquals(await getUserBySessionId(user.sessionId), user);
-  assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
+  // assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), user);
 
   await deleteUser(user);
   assertEquals(await getUserById(user.id), null);
   assertEquals(await getUserByLogin(user.login), null);
   assertEquals(await getUserBySessionId(user.sessionId), null);
-  assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), null);
+  // assertEquals(await getUserByStripeCustomerId(user.stripeCustomerId), null);
 });

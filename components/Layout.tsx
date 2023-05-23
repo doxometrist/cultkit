@@ -12,10 +12,9 @@ function Notice() {
   return (
     <div class={`${NOTICE_STYLES} rounded-none`}>
       <div class={`text-center px-4`}>
-        Deno Hunt powered by Deno SaaSKit is currently in beta. Check out
-        progress in the{" "}
+        Welcome! Checkout the{" "}
         <a
-          href="https://github.com/denoland/saaskit/issues/60"
+          href="https://github.com/doxometrist/cultkit"
           class="underline"
         >
           roadmap
@@ -58,6 +57,7 @@ function Header(props: JSX.HTMLAttributes<HTMLElement>) {
     >
       <a href="/">
         <Logo height="48" />
+        {/* <h3>Cultspace</h3> */}
       </a>
       {props.children}
     </header>
@@ -87,10 +87,10 @@ interface LayoutProps {
 
 export default function Layout(props: LayoutProps) {
   const headerNavItems = [
-    {
-      href: "/pricing",
-      inner: "Pricing",
-    },
+    // {
+    //   href: "/pricing",
+    //   inner: "Pricing",
+    // },
     {
       href: "/cult",
       inner: "Browse cults",
@@ -117,7 +117,7 @@ export default function Layout(props: LayoutProps) {
     },
     {
       inner: "Source code",
-      href: "https://github.com/denoland/saaskit",
+      href: "https://github.com/doxometrist/cultkit",
     },
     {
       href: "https://fresh.deno.dev",

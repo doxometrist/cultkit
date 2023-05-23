@@ -35,7 +35,7 @@ function Row(props: RowProps) {
 }
 
 export default function AccountPage(props: PageProps<AccountState>) {
-  const action = props.data.user.isSubscribed ? "Manage" : "Upgrade";
+  // const action = props.data.user.isSubscribed ? "Manage" : "Upgrade";
   const hasResetPassword = new URL(props.url).searchParams.get(
     "has_reset_password",
   );
@@ -62,12 +62,13 @@ export default function AccountPage(props: PageProps<AccountState>) {
               title="Subscription"
               text={props.data.user.isSubscribed ? "Premium 🦕" : "Free"}
             >
-              <a
+              {/* <a
                 class="underline"
                 href={`/account/${action.toLowerCase()}`}
               >
                 {action}
-              </a>
+              </a> */}
+              Unavailable in the present
             </Row>
           </ul>
           <a

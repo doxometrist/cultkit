@@ -4,6 +4,7 @@ import { redirect } from "@/utils/http.ts";
 import {
   createUser,
   getUserById,
+  InitUser,
   setUserSession,
   type User,
 } from "@/utils/db.ts";
@@ -39,14 +40,14 @@ export const handler: Handlers<any, State> = {
 
     const user = await getUserById(githubUser.id.toString());
     if (!user) {
-      const customer = await stripe.customers.create({
-        email: githubUser.email,
-      });
-      const userInit: Omit<User, "isSubscribed"> | null = {
+      // const customer = await stripe.customers.create({
+      //   email: githubUser.email,
+      // });
+      const userInit: Omit<InitUser, "isSubscribed"> = {
         id: githubUser.id.toString(),
         login: githubUser.login,
         avatarUrl: githubUser.avatar_url,
-        stripeCustomerId: customer.id,
+        // stripeCustomerId: customer.id,
         sessionId,
       };
       await createUser(userInit);

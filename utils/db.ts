@@ -193,11 +193,11 @@ export async function getVotedItemIdsByUser(
 }
 
 // USER STUFF
-interface InitUser {
+export interface InitUser {
   id: string;
   login: string;
   avatarUrl: string;
-  stripeCustomerId: string;
+  // stripeCustomerId: string;
   sessionId: string;
 }
 
@@ -211,10 +211,10 @@ export async function createUser(user: InitUser) {
   const usersKey = ["users", user.id];
   const usersByLoginKey = ["users_by_login", user.login];
   const usersBySessionKey = ["users_by_session", user.sessionId];
-  const usersByStripeCustomerKey = [
-    "users_by_stripe_customer",
-    user.stripeCustomerId,
-  ];
+  // const usersByStripeCustomerKey = [
+  //   "users_by_stripe_customer",
+  //   user.stripeCustomerId,
+  // ];
   const date = new Date();
 
   user = { ...user, isSubscribed: false, joinDate: date, personas: [] } as User;
@@ -223,11 +223,11 @@ export async function createUser(user: InitUser) {
     .check({ key: usersKey, versionstamp: null })
     .check({ key: usersByLoginKey, versionstamp: null })
     .check({ key: usersBySessionKey, versionstamp: null })
-    .check({ key: usersByStripeCustomerKey, versionstamp: null })
+    // .check({ key: usersByStripeCustomerKey, versionstamp: null })
     .set(usersKey, user)
     .set(usersByLoginKey, user)
     .set(usersBySessionKey, user)
-    .set(usersByStripeCustomerKey, user)
+    // .set(usersByStripeCustomerKey, user)
     .commit();
 
   if (!res.ok) {
@@ -257,13 +257,13 @@ export async function getUserBySessionId(sessionId: string) {
   return res.value;
 }
 
-export async function getUserByStripeCustomerId(stripeCustomerId: string) {
-  const res = await kv.get<User>([
-    "users_by_stripe_customer",
-    stripeCustomerId,
-  ]);
-  return res.value;
-}
+// export async function getUserByStripeCustomerId(stripeCustomerId: string) {
+//   const res = await kv.get<User>([
+//     "users_by_stripe_customer",
+//     stripeCustomerId,
+//   ]);
+//   return res.value;
+// }
 
 function isEntry<T>(entry: Deno.KvEntryMaybe<T>) {
   return entry.versionstamp !== null;
@@ -277,82 +277,83 @@ function assertIsEntry<T>(
   }
 }
 
-export async function setUserSubscription(
-  user: User,
-  isSubscribed: User["isSubscribed"],
-) {
-  const usersKey = ["users", user.id];
-  const usersByLoginKey = ["users_by_login", user.login];
-  const usersBySessionKey = ["users_by_session", user.sessionId];
-  const usersByStripeCustomerKey = [
-    "users_by_stripe_customer",
-    user.stripeCustomerId,
-  ];
+// export async function setUserSubscription(
+//   user: User,
+//   isSubscribed: User["isSubscribed"],
+// ) {
+//   const usersKey = ["users", user.id];
+//   const usersByLoginKey = ["users_by_login", user.login];
+//   const usersBySessionKey = ["users_by_session", user.sessionId];
+//   // const usersByStripeCustomerKey = [
+//   //   "users_by_stripe_customer",
+//   //   user.stripeCustomerId,
+//   // ];
 
-  const [
-    userRes,
-    userByLoginRes,
-    userBySessionRes,
-    userByStripeCustomerRes,
-  ] = await kv.getMany<User[]>([
-    usersKey,
-    usersByLoginKey,
-    usersBySessionKey,
-    usersByStripeCustomerKey,
-  ]);
+//   const [
+//     userRes,
+//     userByLoginRes,
+//     userBySessionRes,
+//     userByStripeCustomerRes,
+//   ] = await kv.getMany<User[]>([
+//     usersKey,
+//     usersByLoginKey,
+//     usersBySessionKey,
+//     usersByStripeCustomerKey,
+//   ]);
 
-  [
-    userRes,
-    userByLoginRes,
-    userBySessionRes,
-    userByStripeCustomerRes,
-  ].forEach((res) => assertIsEntry<User>(res));
+//   [
+//     userRes,
+//     userByLoginRes,
+//     userBySessionRes,
+//     userByStripeCustomerRes,
+//   ].forEach((res) => assertIsEntry<User>(res));
 
-  user = { ...user, isSubscribed } as User;
+//   user = { ...user, isSubscribed } as User;
 
-  const res = await kv.atomic()
-    .check(userRes)
-    .check(userByLoginRes)
-    .check(userBySessionRes)
-    .check(userByStripeCustomerRes)
-    .set(usersKey, user)
-    .set(usersByLoginKey, user)
-    .set(usersBySessionKey, user)
-    .set(usersByStripeCustomerKey, user)
-    .commit();
+//   const res = await kv.atomic()
+//     .check(userRes)
+//     .check(userByLoginRes)
+//     .check(userBySessionRes)
+//     .check(userByStripeCustomerRes)
+//     .set(usersKey, user)
+//     .set(usersByLoginKey, user)
+//     .set(usersBySessionKey, user)
+//     .set(usersByStripeCustomerKey, user)
+//     .commit();
 
-  if (!res.ok) {
-    throw res;
-  }
-}
+//   if (!res.ok) {
+//     throw res;
+//   }
+// }
 
 /** This assumes that the previous session has been cleared */
 export async function setUserSession(
   user: Omit<User, "isSubscribed">,
   sessionId: string,
 ) {
+  console.log('setting new user session');
   const usersKey = ["users", user.id];
   const usersByLoginKey = ["users_by_login", user.login];
   const usersBySessionKey = ["users_by_session", sessionId];
-  const usersByStripeCustomerKey = [
-    "users_by_stripe_customer",
-    user.stripeCustomerId,
-  ];
+  // const usersByStripeCustomerKey = [
+  //   "users_by_stripe_customer",
+  //   user.stripeCustomerId,
+  // ];
 
   const [
     userRes,
     userByLoginRes,
-    userByStripeCustomerRes,
+    // userByStripeCustomerRes,
   ] = await kv.getMany<User[]>([
     usersKey,
     usersByLoginKey,
-    usersByStripeCustomerKey,
+    // usersByStripeCustomerKey,
   ]);
 
   [
     userRes,
     userByLoginRes,
-    userByStripeCustomerRes,
+    // userByStripeCustomerRes,
   ].forEach((res) => assertIsEntry<User>(res));
 
   user = { ...user, sessionId } as User;
@@ -361,11 +362,11 @@ export async function setUserSession(
     .check(userRes)
     .check(userByLoginRes)
     .check({ key: usersBySessionKey, versionstamp: null })
-    .check(userByStripeCustomerRes)
+    // .check(userByStripeCustomerRes)
     .set(usersKey, user)
     .set(usersByLoginKey, user)
     .set(usersBySessionKey, user)
-    .set(usersByStripeCustomerKey, user)
+    // .set(usersByStripeCustomerKey, user)
     .commit();
 
   if (!res.ok) {
@@ -377,10 +378,10 @@ export async function deleteUser(user: User) {
   const usersKey = ["users", user.id];
   const usersByLoginKey = ["users_by_login", user.login];
   const usersBySessionKey = ["users_by_session", user.sessionId];
-  const usersByStripeCustomerKey = [
-    "users_by_stripe_customer",
-    user.stripeCustomerId,
-  ];
+  // const usersByStripeCustomerKey = [
+  //   "users_by_stripe_customer",
+  //   user.stripeCustomerId,
+  // ];
 
   const [
     userRes,
@@ -391,7 +392,7 @@ export async function deleteUser(user: User) {
     usersKey,
     usersByLoginKey,
     usersBySessionKey,
-    usersByStripeCustomerKey,
+    // usersByStripeCustomerKey,
   ]);
 
   const res = await kv.atomic()
@@ -402,7 +403,7 @@ export async function deleteUser(user: User) {
     .delete(usersKey)
     .delete(usersByLoginKey)
     .delete(usersBySessionKey)
-    .delete(usersByStripeCustomerKey)
+    // .delete(usersByStripeCustomerKey)
     .commit();
 
   if (!res.ok) {
