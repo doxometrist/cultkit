@@ -20,6 +20,9 @@ towards more specific functionalities. Here's a potential order:
 
 - [ ] Groups Functionalities: Set up the basic group functionality. This
       includes creating a group, joining a group, leaving a group, etc.
+      - [ ] delete personas
+      - [ ] need some double key for storign person x cult relation
+      - [ ] see someone's persona profile and see all the cults they're in
 
 - [ ] Group Admin Panel for Managing Access: You need to establish who has the
       power to add/remove users, change settings, etc. CRUD over ranks, CRUD

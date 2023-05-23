@@ -115,7 +115,7 @@ export default function PersonasPage(props: PageProps<PersonasState>) {
 
   return (
     <>
-      <Head title="Account" href={props.url.href} />
+      <Head title="Personas" href={props.url.href} />
       <Layout session={props.data.sessionId}>
         <div class="max-w-lg m-auto w-full flex-1 p-4 flex flex-col justify-center">
           <h1 class="text-3xl mb-4">

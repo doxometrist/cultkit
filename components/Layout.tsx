@@ -93,6 +93,11 @@ export default function Layout(props: LayoutProps) {
     },
     {
 
+      href: "/this_persona_participation",
+      inner: "My participations",
+    },
+    {
+
       href: "/personas",
       inner: "My personas",
     },

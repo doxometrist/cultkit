@@ -32,6 +32,7 @@ import * as $25 from "./routes/personas/_middleware.ts";
 import * as $26 from "./routes/personas/index.tsx";
 import * as $27 from "./routes/pricing.tsx";
 import * as $28 from "./routes/submit.tsx";
+import * as $29 from "./routes/this_persona_participation/index.tsx";
 import * as $$0 from "./islands/OpenFormButton.tsx";
 import * as $$1 from "./islands/VoteButton.tsx";
 
@@ -66,6 +67,7 @@ const manifest = {
     "./routes/personas/index.tsx": $26,
     "./routes/pricing.tsx": $27,
     "./routes/submit.tsx": $28,
+    "./routes/this_persona_participation/index.tsx": $29,
   },
   islands: {
     "./islands/OpenFormButton.tsx": $$0,
