@@ -76,6 +76,8 @@ https://www.lightningdesignsystem.com/design-tokens/
       all group-related functionalities are in place and stable. This page will
       serve as a summary and entry point to all the features you've developed.
 
+- [ ] search over personas and descriptions, and public ranks.
+
 Remember that software development is iterative, so you might find yourself
 coming back to refine features after they're initially built. Also, user testing
 should be conducted throughout the process to ensure the product meets user
@@ -91,7 +93,11 @@ ask for landing page here https://durable.co/ number of cults number of users
 https://css-tricks.com/animating-number-counters/
 
 list of cults signup button pricing page with different tiers make your own cult
+
 and participate in them!
+
+add these good things for hero, features list
+https://fresh.deno.dev/components#
 
 # changes for sstripe
 

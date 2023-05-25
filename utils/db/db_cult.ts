@@ -1,6 +1,6 @@
 import { kv } from "@/utils/db.ts";
-import { Rank, rank0 } from "@/utils/db/db_ranks_permissions.ts";
 import { createDefaultSetup } from "./db_setup.ts";
+import { Rank } from "./db_rank.ts";
 
 export interface Cult extends InitCult {
   cultistIds: string[];
@@ -46,14 +46,14 @@ export async function getCult(cultId: string) {
   return res.value
 }
 
-export async function addMember(cultId: string, personaId: string) {
+export async function addMember(cultId: string, personaId: string, rank: Rank) {
   let res = { ok: false };
   while (!res.ok) {
     const itemKey = ["cults", cultId, 'basic', 'member_id_to_rank', personaId];
 
     res = await kv.atomic()
       .check({ key: itemKey, versionstamp: null })
-      .set(itemKey, rank0)
+      .set(itemKey, rank)
       .commit();
 
     return res;

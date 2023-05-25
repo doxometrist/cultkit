@@ -54,14 +54,28 @@ export default function HomePage(props: PageProps<HomePageData>) {
     <>
       <Head href={props.url.href} />
       <Layout session={props.data.sessionId}>
-        <div class={`${SITE_WIDTH_STYLES} flex-1 px-4`}>
-          {props.data.items.map((item, index) => (
+        <div class={`${SITE_WIDTH_STYLES} flex-1 px-4 snap-proximity snap-y `}>
+          <section class="h-screen snap-center">
+            <h2>page 1</h2>
+            <p >
+              lorem ipsum
+            </p>
+          </section>
+          {/* <section class="h-screen snap-center">
+            <h2>page 2</h2>
+            <p >
+              lorem ipsum
+            </p>
+          </section> */}
+          {
+            /* {props.data.items.map((item, index) => (
             <ItemSummary
               item={item}
               isVoted={props.data.areVoted[index]}
               user={props.data.users[index]}
             />
-          ))}
+          ))} */
+          }
         </div>
       </Layout>
     </>

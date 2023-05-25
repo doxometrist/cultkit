@@ -6,6 +6,7 @@ export interface Persona extends InitPersona {
   joinDate: Date;
   id: string;
   name: string;
+  cultIds: string[];
 }
 
 export interface InitPersona {
@@ -22,7 +23,8 @@ export async function createPersona(initPersona: InitPersona, userId: string) {
       ...initPersona,
       id: id,
       savedResources: [],
-      joinDate: new Date()
+      joinDate: new Date(),
+      cultIds: [],
     };
 
     res = await kv.atomic()
@@ -39,4 +41,14 @@ export async function getPersonasByUserId(userId: string, options?: Deno.KvListO
   const items = [];
   for await (const res of iter) items.push(res.value);
   return items;
+}
+
+
+export async function joinCult(userId: string, cultId: string, personaId: string) {
+  let res = { ok: false };
+  while (!res.ok) {
+    const newKey = ["users", userId, 'personas_by_user', personaId, 'ranks'];
+    res = await kv.atomic().check({ key: newKey, versionstamp: null }).set(newKey, cultId).commit();
+  }
+
 }

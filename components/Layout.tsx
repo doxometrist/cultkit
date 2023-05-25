@@ -110,10 +110,10 @@ export default function Layout(props: LayoutProps) {
         href: "/login",
         inner: "Login",
       },
-    {
-      href: "/submit",
-      inner: <span class={BUTTON_STYLES}>Submit</span>,
-    },
+    // {
+    //   href: "/submit",
+    //   inner: <span class={BUTTON_STYLES}>Submit</span>,
+    // },
   ];
 
   const footerNavItems = [
