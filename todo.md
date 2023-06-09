@@ -130,12 +130,14 @@ dashboard https://quadraticvote.co/event?id=32ada6c6-2e58-4990-a42a-d0428d9d241a
 Original recommendation
 
 - ZK snacks for proving a degree without identity irl - 9, 49
+for ZK proofs
+https://github.com/iden3/snarkjs
 - time restrictions: 6, 17
 - voice only chat- 5, 11 https://github.com/feross/simple-peer
 - https://github.com/peers/peerjs
 - visibility in activities? 2, 11
 - sell physical merch integration - 4, 6
-- quizzes and mantras - need to repeat in voice for a recording to review - 4, 6
+- quigzes and mantras - need to repeat in voice for a recording to review - 4, 6
 
 
 - pdf creation https://pdf-lib.js.org/
@@ -143,3 +145,13 @@ Original recommendation
 
 core, frequent fliers, and passive participants
 https://twitter.com/forthrighter/status/1652995887331778563
+
+
+# use as examples
+https://github.com/Hyprtxt/videopoker.academy
+https://sking.deno.dev/
+https://denosoar.deno.dev/
+https://jpt.ma/
+https://fresh.deno.dev/components#
+https://dev.to/hosseinmobarakian/create-simple-voice-chat-app-with-nodejs-1b70
+https://socket.io/blog/socket-io-deno/
